@@ -1,7 +1,7 @@
 <h2><%= @post.title %></h2>
 <p><%= @post.body%></p>
-<hr>
-<li>
+
+<div>
 
 <% if current_user && current_user.id == @post.user_id || current_user.admin? %>
 <%= link_to "Edit", edit_post_path(@post), :class => 'btn btn-default' %>
@@ -10,9 +10,9 @@
                 data: {confirm: 'Are you sure?'},
                 :class => 'btn btn-danger' %>
 <% end %>
-</li>
+</div>
 
-<hr>
+
 
 <%=render 'comments/comments' %>
 <%=render 'comments/form' %>
