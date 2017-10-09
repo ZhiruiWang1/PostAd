@@ -1,4 +1,9 @@
 class Post < ApplicationRecord
+	belongs_to :user, optional: true
+	validates :user_id, presence: true
+	validates :body, presence: true
+	
+
 	has_many :comments
     validates :title, presence: true, length: {minimum: 4}
     def self.search(search)
