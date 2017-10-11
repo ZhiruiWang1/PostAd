@@ -1,11 +1,28 @@
-# README
+# PostAds
+
+PostAds is intended to be a public platform for users to post advertisements 
+
+* Ruby version ruby 2.3.3
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
 Things you may want to cover:
 
-* Ruby version
 
 * System dependencies
 

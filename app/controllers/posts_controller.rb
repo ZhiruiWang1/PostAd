@@ -53,6 +53,11 @@ before_action :require_login, only:[:show, :new, :edit, :distory]
 
         	render 'edit'
         end
+
+    	rescue ActiveRecord::StaleObjectError
+    		@product.reload
+  			render :action => 'conflict'
+		end
 	end
 
 	def destroy
@@ -70,5 +75,3 @@ before_action :require_login, only:[:show, :new, :edit, :distory]
     	#if(@post.sign_in)
     	#redirect_to @post
 
-
-end
