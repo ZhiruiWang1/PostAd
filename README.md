@@ -2,7 +2,10 @@
 
 PostAds is intended to be a public platform for users to post advertisements 
 
-* Ruby version ruby 2.3.3
+System dependencies
+
+* Ruby version "ruby 2.3.3"
+* Rails version "rails 5.3.1"
 
 
 
