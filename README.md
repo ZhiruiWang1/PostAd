@@ -16,9 +16,9 @@ Below is what the website looks like.
 
 
 ## Installation
-To have PostAd up and running on your PC, you will require a copy of:
-*	Rails 5.1, which can be downloaded under http://railsinstaller.org/en.
-Download "railsinstaller-3.4.0.exe" from the link above and install on your computer
+To have PostAd up and running on your PC, you will require a copy of Rails 5.1, which can be downloaded under http://railsinstaller.org/en.
+
+Download "railsinstaller-3.4.0.exe" from the link above and install on your computer.
 The above package includes:
 *	Ruby 2.3.3
 *	Rails 5.1
