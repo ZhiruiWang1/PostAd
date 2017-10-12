@@ -4,7 +4,7 @@ PostAd is intended to be a public platform for users to post advertisements. <br
 Below is what the website looks like.
 
 ![Alt text](https://github.com/rozar17/proj2/blob/master/img/1.%20index.jpg?raw=true "Optional Title") <br />
-<img src="https://github.com/rozar17/proj2/blob/master/img/1.%20index.jpg?raw=true" width="200" height="200" />
+<img src="https://github.com/rozar17/proj2/blob/master/img/1.%20index.jpg?raw=true" width="500" height="200" />
 
 
 
