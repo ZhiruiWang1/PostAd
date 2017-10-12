@@ -1,6 +1,9 @@
 <h2><%= @post.title %></h2>
+<br>
 <p><%= @post.body%></p>
-
+<br>
+<p>Category:<%= @post.category%></p>
+<br>
 <div>
 
 <% if current_user && current_user.id == @post.user_id || current_user.admin? %>
