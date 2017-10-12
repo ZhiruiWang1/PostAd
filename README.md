@@ -1,30 +1,86 @@
 # PostAds
 
-PostAds is intended to be a public platform for users to post advertisements 
+PostAd is intended to be a public platform for users to post advertisements
+Below is what the website looks like.
 
-System dependencies
+![Alt text](https://github.com/rozar17/proj2/blob/master/img/1.%20index.jpg?raw=true "Optional Title")
+
+
+
+
+## System dependencies
 
 * Ruby version 		=>		"ruby 2.3.3"
 * Rails version 	=>		"rails 5.3.1"
 
 
 
+## Installation
+To have PostAd up and running on your PC, you will require a copy of:
+*	Rails 5.1, which can be downloaded under http://railsinstaller.org/en.
+Download "railsinstaller-3.4.0.exe" from the link above and install on your computer
+The above package includes:
+*	Ruby 2.3.3
+*	Rails 5.1
+*	Bundler
+*	Git
+*	Sqlite
+*	TinyTDS
+*	SQL Server Support
+*	DevKit
+
+
+Once installed, open Git Bash.
+Go to C:\Sites
+```
+cd C:\Sites
+```
+
+
+Download a copy of this project
+```
+git clone https://github.com/ZhiruiWang1/PostAd.git
+```
+
+![Alt text](https://github.com/rozar17/proj2/blob/master/img/2.%20gitBash_download.jpg?raw=true "Optional Title")
+
+
+Change directory
+```
+cd PostAd
+```
+
+![Alt text](https://github.com/rozar17/proj2/blob/master/img/3.%20gitBash.jpg?raw=true "Optional Title")
+
+
+Run bundle install
+```
+bundle install
+```
+
+![Alt text](https://github.com/rozar17/proj2/blob/master/img/4.%20bundle%20install.jpg?raw=true "Optional Title")
+
+Run rails db:migrate
+```
+rails db:migrate
+```
+
+![Alt text](https://github.com/rozar17/proj2/blob/master/img/5.%20db%20migrate.jpg?raw=true "Optional Title")
+Next run rails server (or "s" for server) as per the image below.
+```
+rails s
+```
+
+
+Once the server is up and running, open a browser and type "http://localhost:3000/" as per the image below.
+```
+http://localhost:3000/
+```
+
+![Alt text](https://github.com/rozar17/proj2/blob/master/img/6.%20rails%20s.jpg?raw=true "Optional Title")
 
 
 
-
-
-
-
-
-
-
-
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
 
 
 * System dependencies
@@ -41,5 +97,21 @@ Things you may want to cover:
 
 * Deployment instructions
 
-* ...
+
+
 # simpleblog
+
+
+
+## Versioning
+We use gitHub for versioning.
+
+
+
+## Authors
+* Zhirui Wang
+* Chris
+* Rosa Rodriguez
+
+
+
