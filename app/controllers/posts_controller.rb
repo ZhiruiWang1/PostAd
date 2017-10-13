@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-	before_action :require_login, only: [:new, :edit, :show]
+	before_action :require_login, only: [:new, :edit, :show, :destroy]
 	def index
 		@posts = Post.all
 		if params[:search]
@@ -37,6 +37,7 @@ class PostsController < ApplicationController
 	def create
 		#render plain: params[:post].inspect
 		@post = Post.new(post_params)
+		@post.user = current_user
 
 		if (@post.save)
 		redirect_to @post
