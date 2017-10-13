@@ -5,7 +5,11 @@
         <div class = "alert alert-danger"><%= msg %></div>
        <% end %>
     <% end %>
-
+   
+    <P>	
+		<%= f.label :image %><br>
+		<%= f.file_field :image %>
+	</P>
 	<p>
 	<%= f.label :title %><br>
 	<%= f.text_field :title, :class => 'form-control' %>
