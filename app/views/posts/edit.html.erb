@@ -18,14 +18,6 @@
 	<%= f.text_area :body, :class => 'form-control' %>
 	</p>
 
-	<div class="control-group">
-		Category
-    		<div class="controls">
-        	<%= select_tag(:category, 
-            options_for_select([['Transactions', 2],['Recruitment', 3],['Other', 1]]),
-            {class: "span2"}) %>
-    		</div>
-	</div>
 
 	<p>
 	<%= f.submit :class => 'btn btn-primary' %>
