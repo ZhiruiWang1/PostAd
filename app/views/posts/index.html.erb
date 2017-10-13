@@ -1,25 +1,19 @@
-<h1>Advertisments Post</h1>
-
-   <%= form_tag(posts_path, :method => "get", id: "search-form") do %>
+<h1>&nbsp;&nbsp;Advertisements</h1>
    <p>
-   <%= text_field_tag :search, params[:search], placeholder: "Search Posts" %>
+   <%= form_tag(posts_path, :method => "get", id: "search-form") do %>
+   
+   <br><%= text_field_tag :search, params[:search], placeholder: "Search Posts" %>
    <%= submit_tag "Search"%>
    </p>
   <% end %>
-   
+
 <% @posts.each do |post| %>
-   <div class="well">
-        <h3><%= post.title %></h3>
-        <p><%=post.body%></p>
-        <%= link_to "Read More", post_path(post), :class => 'btn btn-default' %>
-   </div>
-   
+	<div class="well">
+	<h3><%= post.title %></h3>
+	<br>
+	<p><%=post.body %></p>
+	<div><%= image_tag post.image.url(:medium) %></div>
+	<%= link_to "Select", post_path(post), :class => 'btn btn-default' %>
+	</div>
 
- 
-  <% if @posts.present? %>
-    <p><%= render plain: params[:post] %> </p>
-   <%else%>
-     <p>  There are no posts containing the terms(s) <%= params[:serach]%>.</p>
- <% end %> 
-
-  <% end %>
+<% end %>
