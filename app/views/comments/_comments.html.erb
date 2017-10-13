@@ -2,8 +2,10 @@
 <% @post.comments.each do |comment|%>
 <div class="well">
 <p>: <%= comment.body %>
+<% if current_user.admin? %>
 <%= link_to "[X]", [comment.post, comment], 
                 method: :delete,
                 data: {confirm: 'Are you sure?'} %></p>
+<% end %>
 </div>
 <% end %>
