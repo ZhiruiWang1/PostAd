@@ -1,9 +1,7 @@
 class PostsController < ApplicationController
-before_action :require_login, only:[:show, :new, :edit, :distory]
-	#http_basic_authenticate_with name: "chongyang", password: "1234", except: [:index, :show]
+	before_action :require_login, only: [:new, :edit, :show]
 	def index
 		@posts = Post.all
-		
 		if params[:search]
 			@posts = Post.search(params[:search]).order("created_at DESC")
 			
@@ -11,50 +9,40 @@ before_action :require_login, only:[:show, :new, :edit, :distory]
 			@posts = Post.all.order('created_at DESC')
 
 		end
-
 	end
 
-
 	def show
-        @post = Post.find(params[:id])
+		@post =Post.find(params[:id])
 	end
 
 	def new
 		@post = Post.new
-
-	end
-
-	def create
-        #render plain: params[:post].inspect
-        #@post = Post.new(post_params)
-        @post = Post.new(post_params)
-        #@post = current_user.post.build(post_params)
-        @post.user = current_user
-        
-        if(@post.save)
-             redirect_to @post
-        else
-
-        	render 'new'
-        end
-
 	end
 
 	def edit
-		@post = Post.find(params[:id])
+		@post =Post.find(params[:id])
+		
 	end
-	
+
 	def update
-		@post = Post.find(params[:id])
+		@post =Post.find(params[:id])
 
-		if(@post.update(post_params))
-             redirect_to @post
-        else
+		if(@post.update(post_params)
+			redirect_to @post)
+	else
+		render 'edit'
+	end
+	end
 
-        	render 'edit'
-        end
+	def create
+		#render plain: params[:post].inspect
+		@post = Post.new(post_params)
 
-    	
+		if (@post.save)
+		redirect_to @post
+	else
+			render 'new'
+	end
 	end
 
 	def destroy
@@ -65,10 +53,6 @@ before_action :require_login, only:[:show, :new, :edit, :distory]
 	end
 
 	private def post_params
-        params.require(:post).permit(:title,:body,:category)
-    end
-
-    #def signed_in
-    	#if(@post.sign_in)
-    	#redirect_to @post
+		params.require(:post).permit(:title, :body, :image)
+	end
 end
