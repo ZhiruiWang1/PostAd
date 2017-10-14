@@ -1,11 +1,15 @@
 <h1>&nbsp;&nbsp;Advertisements</h1>
-   <p>
+<p>
+
+   <%# Form tag for Search, using GET method%>
    <%= form_tag(posts_path, :method => "get", id: "search-form") do %>
    
-   <br><%= text_field_tag :search, params[:search], placeholder: "Search Posts" %>
-   <%= submit_tag "Search"%>
-   </p>
-  <% end %>
+     <br>
+     <%= text_field_tag :search, params[:search], placeholder: "Search Posts" %>
+     <%= submit_tag "Search", :name => 'nil'%> <%# remove button name in url %>
+   <% end %>
+
+</p>
 
 <% @posts.each do |post| %>
 	<div class="well">
