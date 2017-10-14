@@ -1,7 +1,19 @@
 <div class="text-field">
-  &nbsp<%= form.label :email %>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+  <%= form.label :email %>
   <%= form.text_field :email, type: 'email' %>
 </div>
+
+
+
+<%# Validation error messages %>
+<% if @user.errors.any? %>
+  <% @user.errors.full_messages.each do |msg| %>
+    <div class = "alert alert-danger"><%= msg %></div>
+  <% end %>
+<% end %>
+
+
+
 <br>
 <div class="password-field">
   <%= form.label :password %>
