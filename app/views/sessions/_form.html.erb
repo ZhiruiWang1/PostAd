@@ -1,3 +1,5 @@
+<%# Sign_in page%>
+
 <%= form_for :session, url: session_path do |form| %>
   <div class="text-field">
     &nbsp<%= form.label :email %>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
@@ -10,13 +12,10 @@
   </div>
 <br>
   <div class="submit-field">
-    <%= form.submit %>
-  </div>
-<br>
-  <div class="other-links">
+    <%= form.submit :class => 'btn btn-primary' %>
     <% if Clearance.configuration.allow_sign_up? %>
-      <%= link_to t(".sign_up"), sign_up_path %>
-    <% end %>&nbsp
-    <%= link_to t(".forgot_password"), new_password_path %>
+      <%= link_to t(".sign_up"), sign_up_path, :class => 'btn btn-primary' %>
+    <% end %>
+    <%= link_to t(".forgot_password"), new_password_path, :class => 'btn btn-primary' %>
   </div>
 <% end %>
