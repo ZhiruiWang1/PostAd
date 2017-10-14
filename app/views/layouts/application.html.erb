@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>PostAds</title>
+    <title>PostAd</title>
     <%= csrf_meta_tags %>
     
     <%# Using Bootstrap CDN version 3.3 %>
@@ -11,63 +11,66 @@
   </head>
 
   
+  
   <body>
 
-  <div class="container">
-    <div align="right">
-      <% if signed_in? %>
-        Signed in as: <%= link_to current_user.email %> <br>
-        <%= link_to 'Sign out', sign_out_path, method: :delete %>
-      <% else %>
-        <%= link_to 'Sign in', sign_in_path %>
-      <% end %>
-    </div>
+    <%# Using Bootstrap for the nav bar %>
+    <nav class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header"> 
+          <button type="button" class="navbar-toggle collapsed"
+            data-toggle="collapse" data-target="#navbar"
+            aria-expanded="false" aria-controls="navbar">
 
-    <div id="flash">
-      <% flash.each do |key, value| %>
-        <div class="flash <%= key %>"><%= value %></div>
-      <% end %>
-    </div>
-  </div>
-    
-    
-    
-    
-  <nav class="navbar navbar-default">
-    <div class="container">
-      <div class="navbar-header"> 
-        <button type="button" class="navbar-toggle collapsed"
-          data-toggle="collapse" data-target="#navbar"
-          aria-expanded="false" aria-controls="navbar">
-
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
         
-        <a class="navbar-brand">PostAds</a>
+          <a class="navbar-brand">PostAds</a>
+        </div>
+      
+      
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li><%= link_to "Home", home_path %></li>
+                <%# need to define home in routes.rb %>
+          </ul>
+        
+          <ul class="nav navbar-nav navbar-right">
+          
+            <% if signed_in? %>
+                <li><a style="color:#000066"><%= 'Signed in as: ' + link_to current_user.email %></a></li>
+                <li><%= link_to 'Sign out', sign_out_path, method: :delete %></li>
+              <% else %>
+                <li><%= link_to 'Sign in', sign_in_path %></li>
+            <% end %>
+          
+            <li><%= link_to "Create Post", new_post_path %></li>
+          </ul>
+        </div>
+      
       </div>
-      
-      
-      <div id="navbar" class="collapse navbar-collapse">
-        <ul class="nav navbar-nav">
-          <li><%= link_to "Home", home_path %></li>
-              <%# need to define home in routes.rb %>
-        </ul>
-        <ul class="nav navbar-nav navbar-right">
-          <li><%= link_to "Create Post", new_post_path %></li>
-        </ul>
+    </nav>
+
+
+
+
+    <%# Put our page contents in bootstrap container %>
+    <div class="container">
+    
+      <%# Sign in messages %>
+      <div id="flash">
+        <% flash.each do |key, value| %>
+          <div class="flash <%= key %>"><%= value %></div>
+        <% end %>
       </div>
-      
+    
+      <%= yield %>
     </div>
-  </nav>
-    
-    
-<%# put our page contents in bootstrap container %>    
-<div class="container">
-  <%= yield %>
-</div>
- 
+
+
+
   </body>
 </html>
