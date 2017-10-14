@@ -5,8 +5,6 @@ Rails.application.routes.draw do
   # Main page that opens is root
   root 'posts#index', as: 'home' # as 'home' is needed as its defined in \app\views\layouts\application.html.erb
 
-  get'about' => 'pages#about', as: 'about'
-
   # Resources creates seven different routes in this application, all mapping to the Posts controller
   # They are the index, new, create, show, edit, update and destroy actions
   resources :posts do
