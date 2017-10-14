@@ -1,17 +1,20 @@
-<h1>&nbsp;&nbsp;Advertisements</h1>
-   <p>
-   <%= form_tag(posts_path, :method => "get", id: "search-form") do %>
+<h1>Advertisements</h1>
+
+<p>
+  <%# Form tag for Search, using GET method%>
+  <%= form_tag(posts_path, :method => "get", id: "search-form") do %>
    
-   <br><%= text_field_tag :search, params[:search], placeholder: "Search Posts" %>
-   <%= submit_tag "Search"%>
+  <br>
+     <%= text_field_tag :search, params[:search], placeholder: "Search Posts" %>
+     <%= submit_tag "Search", :name => 'nil'%> <%# remove button name in url %>
    </p>
   <% end %>
 
 <% @posts.each do |post| %>
-	<div class="well">
-         <h3><%= post.title %></h3>
-         <p><%=post.body%></p>
-         <div><%= image_tag post.image.url(:medium) %></div>
-         <%= link_to "Read More", post_path(post), :class => 'btn btn-default' %>
-    </div>
-    <% end %>
+  <div class="well">
+    <h3><%= post.title %></h3>
+    <p><%=post.body%></p>
+    <div><%= image_tag post.image.url(:medium) %></div>
+    <%= link_to "Read More", post_path(post), :class => 'btn btn-default' %>
+  </div>
+<% end %>
