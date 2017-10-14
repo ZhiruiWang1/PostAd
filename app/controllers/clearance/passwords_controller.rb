@@ -63,7 +63,7 @@ class Clearance::PasswordsController < Clearance::BaseController
     if mail.respond_to?(:deliver_later)
       mail.deliver_later
     else
-      mail.deliver
+      mail.deliver_now
     end
   end
 
