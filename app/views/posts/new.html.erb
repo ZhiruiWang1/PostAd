@@ -1,27 +1,30 @@
 <h1>Add Posts</h1>
-<%= form_for :post, url: posts_path do |f| %>
-    <% if @post.errors.any? %>
-     <% @post.errors.full_messages.each do |msg| %>
-        <div class = "alert alert-danger"><%= msg %></div>
-       <% end %>
-    <% end %>
-   
-    <P>	
-		<%= f.label :image %><br>
-		<%= f.file_field :image %>
-	</P>
-	<p>
-	<%= f.label :title %><br>
-	<%= f.text_field :title, :class => 'form-control' %>
-	</p>
 
-	<p>
-	<%= f.label :body %><br>
-	<%= f.text_area :body, :class => 'form-control' %>
-	</p>
+<%= form_for :post, url: posts_path do |f| %>
+
+  <%# Validation error messages %>
+    <% if @post.errors.any? %>
+    <% @post.errors.full_messages.each do |msg| %>
+      <div class = "alert alert-danger"><%= msg %></div>
+    <% end %>
+  <% end %>
+   
+  <p>
+    <%= f.label :image %><br>
+    <%= f.file_field :image %>
+  </p>
+  <p>
+    <%= f.label :title %><br>
+    <%= f.text_field :title, :class => 'form-control' %>
+  </p>
+
+  <p>
+    <%= f.label :body %><br>
+    <%= f.text_area :body, :class => 'form-control' %>
+  </p>
 	
-	
-	<%= f.submit :class => 'btn btn-primary' %>
-	</p>
+  <p>
+    <%= f.submit :class => 'btn btn-primary' %>
+  </p>
 
 <% end %>
