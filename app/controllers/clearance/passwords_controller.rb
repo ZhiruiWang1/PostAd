@@ -1,6 +1,8 @@
 require 'active_support/deprecation'
 
 class Clearance::PasswordsController < Clearance::BaseController
+  
+  # Stop access to pages unless logged in - using Clearance helper
   if respond_to?(:before_action)
     skip_before_action :require_login,
       only: [:create, :edit, :new, :update],
@@ -19,6 +21,7 @@ class Clearance::PasswordsController < Clearance::BaseController
     before_filter :ensure_existing_user, only: [:edit, :update]
   end
 
+  
   def create
     if user = find_user_for_create
       user.forgot_password!
@@ -27,6 +30,7 @@ class Clearance::PasswordsController < Clearance::BaseController
     render template: 'passwords/create'
   end
 
+  
   def edit
     @user = find_user_for_edit
 
@@ -38,10 +42,12 @@ class Clearance::PasswordsController < Clearance::BaseController
     end
   end
 
+  
   def new
     render template: 'passwords/new'
   end
 
+  
   def update
     @user = find_user_for_update
 
@@ -55,6 +61,8 @@ class Clearance::PasswordsController < Clearance::BaseController
     end
   end
 
+  
+  # Private methods for this class
   private
 
   def deliver_email(user)
@@ -67,6 +75,7 @@ class Clearance::PasswordsController < Clearance::BaseController
     end
   end
 
+  
   def password_reset_params
     if params.has_key? :user
       ActiveSupport::Deprecation.warn %{Since locales functionality was added, accessing params[:user] is no longer supported.}
@@ -75,6 +84,7 @@ class Clearance::PasswordsController < Clearance::BaseController
       params[:password_reset][:password]
     end
   end
+  
 
   def find_user_by_id_and_confirmation_token
     user_param = Clearance.configuration.user_id_parameter
@@ -83,19 +93,23 @@ class Clearance::PasswordsController < Clearance::BaseController
     Clearance.configuration.user_model.
       find_by_id_and_confirmation_token params[user_param], token.to_s
   end
+  
 
   def find_user_for_create
     Clearance.configuration.user_model.
       find_by_normalized_email params[:password][:email]
   end
+  
 
   def find_user_for_edit
     find_user_by_id_and_confirmation_token
   end
+  
 
   def find_user_for_update
     find_user_by_id_and_confirmation_token
   end
+  
 
   def ensure_existing_user
     unless find_user_by_id_and_confirmation_token
@@ -103,22 +117,26 @@ class Clearance::PasswordsController < Clearance::BaseController
       render template: "passwords/new"
     end
   end
+  
 
   def flash_failure_when_forbidden
     flash.now[:notice] = translate(:forbidden,
       scope: [:clearance, :controllers, :passwords],
       default: t('flashes.failure_when_forbidden'))
   end
+  
 
   def flash_failure_after_update
     flash.now[:notice] = translate(:blank_password,
       scope: [:clearance, :controllers, :passwords],
       default: t('flashes.failure_after_update'))
   end
+  
 
   def url_after_create
     sign_in_url
   end
+  
 
   def url_after_update
     Clearance.configuration.redirect_url
