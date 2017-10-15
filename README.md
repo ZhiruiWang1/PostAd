@@ -96,6 +96,11 @@ https://github.com/ZhiruiWang1/PostAd/wiki <br /><br />
 
 
 
+## Support
+For feedback or if you think you found a bug in PostAd, you can [submit an issue](https://github.com/ZhiruiWang1/PostAd/issues/new).<br /><br />
+
+
+
 ## Versioning
 We use gitHub for versioning. <br /><br />
 
