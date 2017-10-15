@@ -29,6 +29,7 @@ The above package includes:
 *	DevKit
 
 
+
 Once installed, open Git Bash. <br />
 Go to C:\Sites
 ```
@@ -82,12 +83,14 @@ http://localhost:3000/
 ```
 ![Alt text](https://github.com/rozar17/proj2/blob/master/img/1.%20index.jpg?raw=true "Optional Title") <br />
 
+
+
 ## Development environment
 For Ruby on Rails development, we recommend macOX or Linux rather than Windows. Windows system has weakness of compatibility for Ruby on Rails.
 
 
 
-# Documentation
+## Documentation
 
 https://github.com/ZhiruiWang1/PostAd/wiki
 
