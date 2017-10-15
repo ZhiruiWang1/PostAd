@@ -1,4 +1,6 @@
 class Clearance::SessionsController < Clearance::BaseController
+  
+  # Stop access to pages unless logged in - using Clearance helper
   if respond_to?(:before_action)
     before_action :redirect_signed_in_users, only: [:new]
     skip_before_action :require_login,
@@ -16,6 +18,7 @@ class Clearance::SessionsController < Clearance::BaseController
       only: [:create, :new, :destroy],
       raise: false
   end
+  
 
   def create
     @user = authenticate(params)
@@ -29,16 +32,21 @@ class Clearance::SessionsController < Clearance::BaseController
       end
     end
   end
+  
 
   def destroy
     sign_out
     redirect_to url_after_destroy
   end
+  
 
   def new
     render template: "sessions/new"
   end
+  
+  
 
+  # Private methods for this class
   private
 
   def redirect_signed_in_users
@@ -46,14 +54,17 @@ class Clearance::SessionsController < Clearance::BaseController
       redirect_to url_for_signed_in_users
     end
   end
+  
 
   def url_after_create
     Clearance.configuration.redirect_url
   end
+  
 
   def url_after_destroy
     sign_in_url
   end
+  
 
   def url_for_signed_in_users
     url_after_create
