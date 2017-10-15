@@ -82,23 +82,9 @@ http://localhost:3000/
 ```
 ![Alt text](https://github.com/rozar17/proj2/blob/master/img/1.%20index.jpg?raw=true "Optional Title") <br />
 
+## Development environment
+For Ruby on Rails development, we recommend macOX or Linux rather than Windows. Windows system has weakness of compatibility for Ruby on Rails.
 
-
-
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
 
 
 # Documentation
