@@ -40,6 +40,7 @@
         
           <ul class="nav navbar-nav navbar-right">
           
+            <%# Using Clearance helpers %>
             <% if signed_in? %>
                 <li><a style="color:#000066"><%= 'Signed in as: ' + current_user.email %></a></li>
                 <li><%= link_to 'Sign out', sign_out_path, method: :delete %></li>
@@ -61,7 +62,7 @@
     <%# Put our page contents in bootstrap container %>
     <div class="container">
     
-      <%# Sign in messages %>
+      <%# Using Clearance helper - Sign in messages %>
       <div id="flash">
         <% flash.each do |key, value| %>
           <div class="flash <%= key %>"><%= value %></div>
