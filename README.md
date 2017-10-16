@@ -26,6 +26,12 @@ The above package includes:
 *	DevKit
 <br />
 
+For the macOX system, X-code is required for development and can be purchased on App Store. For Rails installation, you need to run the following commands to install env:
+```
+brew install rbenv
+
+brew install ruby-build
+```
 
 Once installed, open Git Bash. <br />
 Go to _C:\Sites_
