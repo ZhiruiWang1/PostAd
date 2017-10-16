@@ -109,6 +109,11 @@ We use gitHub for versioning. <br /><br />
 
 
 
+## Reference
+The "admin" function is referenced "Ruby on Rails Tutorial: Learn Web Development with Rails" by Michael Hartl. 
+
+
+
 ## Authors
 * Zhirui Wang
 * Chongyang Zhong
