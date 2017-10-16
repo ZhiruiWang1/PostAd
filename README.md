@@ -61,7 +61,7 @@ bundle install
 
 
 
-Run _rails db:migrate_ to execute the migrations under db/migrate/ on the project that have not run yet starting with the oldest timestamp. To read more about the database and tables used, see [libraries](https://github.com/ZhiruiWang1/PostAd/wiki/Libraries)
+Run _rails db:migrate_ to execute the migrations under db/migrate/ on the project that have not run yet starting with the oldest timestamp. To read more about the database and tables used, see [libraries](https://github.com/ZhiruiWang1/PostAd/wiki/Libraries).
 
 
 
