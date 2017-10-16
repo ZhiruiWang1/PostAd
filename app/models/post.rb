@@ -9,13 +9,13 @@ class Post < ApplicationRecord
 	
   #validation rules
   validates :user_id, presence: true
-  validates :body, presence: true
+  validates :body, presence: true, length: {minimum: 4, maximum: 1000}
 	
 
   has_many :comments
 	
   #validation rules
-  validates :title, presence: true, length: {minimum: 4}					
+  validates :title, presence: true, length: {minimum: 4, maximum: 140}					
 
 	
   #Method for Searching Post records - database lookup
