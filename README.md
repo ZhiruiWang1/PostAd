@@ -95,7 +95,7 @@ For Ruby on Rails development, we recommend macOX or Linux rather than Windows. 
 
 
 ## Documentation
-https://github.com/ZhiruiWang1/PostAd/wiki <br /><br />
+<a href="https://github.com/ZhiruiWang1/PostAd/wiki" target="_blank">https://github.com/ZhiruiWang1/PostAd/wiki</a> <br /><br />
 
 
 
