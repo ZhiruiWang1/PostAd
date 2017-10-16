@@ -112,8 +112,8 @@ We use gitHub for versioning. <br /><br />
 ## Reference
 The "admin" function is referenced "Ruby on Rails Tutorial: Learn Web Development with Rails" by Michael Hartl. 
 
-The "Post" function is referenced "Ruby On Rails In 60 Minutes" by Traversy Media
-<a href="https://www.youtube.com/watch?v=pPy0GQJLZUM&index=7&list=WL&t=206s" target="_blank">https://www.youtube.com/watch?v=pPy0GQJLZUM&index=7&list=WL&t=206s</a><br /><br />
+The "Post" function is referenced "Ruby On Rails In 60 Minutes" by Traversy Media<br />
+Link:<a href="https://www.youtube.com/watch?v=pPy0GQJLZUM&index=7&list=WL&t=206s" target="_blank">https://www.youtube.com/watch?v=pPy0GQJLZUM&index=7&list=WL&t=206s</a><br /><br />
 
 
 
